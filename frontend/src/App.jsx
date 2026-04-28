@@ -14,6 +14,14 @@ const prices = {
   turnkey: 3500,
 };
 
+const ContactIcon = ({ children }) => (
+  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-100 text-orange-500 shrink-0">
+    <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
+      {children}
+    </svg>
+  </span>
+);
+
 function App() {
   const [activePage, setActivePage] = useState('home');
   const [wellType, setWellType] = useState('sand');
@@ -278,19 +286,27 @@ function App() {
         <div className="max-w-2xl mx-auto bg-gray-50 rounded-2xl p-8 shadow-md">
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <span className="text-2xl text-orange-500 w-8">[ ]</span>
+              <ContactIcon>
+                <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z" />
+              </ContactIcon>
               <span className="text-gray-700 text-lg">{contacts.address}</span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-2xl text-orange-500 w-8">@</span>
+              <ContactIcon>
+                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.31.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.26.19 2.45.56 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2Z" />
+              </ContactIcon>
               <a href="tel:+79998887766" className="text-gray-700 text-lg hover:text-orange-500 transition">{contacts.phone}</a>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-2xl text-orange-500 w-8">#</span>
+              <ContactIcon>
+                <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2 .37 6.42 4.51a1 1 0 0 0 1.16 0L19 7.12v-.37a.75.75 0 0 0-.75-.75H5.75A.75.75 0 0 0 5 6.75v.37Zm14 2.44-5.27 3.7a3 3 0 0 1-3.46 0L5 9.56v7.69c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V9.56Z" />
+              </ContactIcon>
               <a href={`mailto:${contacts.email}`} className="text-gray-700 text-lg hover:text-orange-500 transition">{contacts.email}</a>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-2xl text-orange-500 w-8">*</span>
+              <ContactIcon>
+                <path d="M12 1.75a.75.75 0 0 1 .75.75v8.81l6.22 3.59a.75.75 0 1 1-.75 1.3l-6.6-3.81A.75.75 0 0 1 11.25 12V2.5a.75.75 0 0 1 .75-.75ZM12 4a8 8 0 1 0 8 8 8.01 8.01 0 0 0-8-8Zm-9.5 8a9.5 9.5 0 1 1 9.5 9.5A9.51 9.51 0 0 1 2.5 12Z" />
+              </ContactIcon>
               <span className="text-gray-700 text-lg">{contacts.workHours}</span>
             </div>
           </div>
